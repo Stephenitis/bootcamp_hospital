@@ -68,7 +68,7 @@ class Hospital
   end
 
   def login(username, password)
-    @database.detect{|obj| obj.username == username && obj.password == password}
+    @database.detect{|obj| obj.is_a? Employee && obj.username == username && obj.password == password}
   end
 end
 
